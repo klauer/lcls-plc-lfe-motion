@@ -20,4 +20,9 @@ jobs:
     - name: Initialize
       run: |
           export TWINCAT_SUMMARY=1
-          source pcds-ci-helpers/travis/init.sh
+          bash pcds-ci-helpers/travis/tc3_summary.sh > project_summary.txt
+                    
+    - uses: actions/upload-artifact@v1
+      with:
+        name: project_summary.txt
+        path: project_summary.txt
