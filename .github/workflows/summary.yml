@@ -11,6 +11,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Clone helpers
       run: git clone --depth 1 --branch enh_summary git://github.com/klauer/pcds-ci-helpers.git
+
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+
     - name: Initialize
       run: |
           export TWINCAT_SUMMARY=1
